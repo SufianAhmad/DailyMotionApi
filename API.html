@@ -5,6 +5,16 @@
 	<h2>Video From DailyMotion</h2>
 </head>
 <body>
+<ul class="Videos">
+		<script id="video-template" type="text/x-handlebars-template">
+			
+				<li>
+					<h4>Channel Type: {{channel}}</h4>
+					<a href = "{{url}}" <h4>{{title}}</h4></a>
+					<p>ID: {{id}}</p>
+				</li>
+			
+		</script>
 	<script src = "handlebars.js"></script>
 	<script src = "jquery.js"></script>
 	<script>
@@ -34,6 +44,9 @@
 								url: 'http://www.dailymotion.com/video/'+ video.id
 							};
 						});
+						self.attachTemplate();
+					});
+				}
 			};
 			dMotion.init({
 				template: $('#video-template').html(), //equals to this.template
