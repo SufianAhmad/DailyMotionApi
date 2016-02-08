@@ -16,6 +16,12 @@
 					this.template = config.template;
 					this.container = config.container;
 					this.fetch();
+				},
+				attachTemplate: function(){
+
+					var temp = Handlebars.compile( this.template );
+
+					this.container.append( temp(this.dVideos) ); //append data to container(container is ul)
 				}
 			};
 			})();
