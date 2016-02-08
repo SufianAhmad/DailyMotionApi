@@ -27,6 +27,12 @@
 					var self = this;
 					$.getJSON(this.url, function( data ){
 						self.dVideos =	$.map(data.list, function(video){
+							return {
+								channel: video.channel,
+								id: video.id,
+								title: video.title,
+								url: 'http://www.dailymotion.com/video/'+ video.id
+							};
 						});
 			};
 			})();
