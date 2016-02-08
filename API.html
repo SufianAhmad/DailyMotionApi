@@ -5,6 +5,21 @@
 	<h2>Video From DailyMotion</h2>
 </head>
 <body>
+	<script src = "handlebars.js"></script>
+	<script src = "jquery.js"></script>
+	<script>
+			(function(){
+				var dMotion = {
+				init: function( config ){
+					this.url= 'https://api.dailymotion.com/channel/x1beowl/videos';
 
+					this.template = config.template;
+					this.container = config.container;
+					this.fetch();
+				}
+			};
+			})();
+
+	</script>
 </body>
 </html>
