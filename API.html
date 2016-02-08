@@ -22,7 +22,12 @@
 					var temp = Handlebars.compile( this.template );
 
 					this.container.append( temp(this.dVideos) ); //append data to container(container is ul)
-				}
+				},
+				fetch: function(){
+					var self = this;
+					$.getJSON(this.url, function( data ){
+						self.dVideos =	$.map(data.list, function(video){
+						});
 			};
 			})();
 
